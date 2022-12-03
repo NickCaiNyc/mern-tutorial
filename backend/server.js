@@ -9,7 +9,14 @@ const express = require('express')
 const dotenv = require('dotenv').config(); //loads .env basically env = environment variable
 const port = process.env.PORT || 5000
 
-const {errorHandler} = require('./middleware/errorMiddleware') //step 5
+        //step 7 mongodb // db.js
+const colors = require('colors')
+const connectDB = require('./config/db')
+connectDB()
+        //step 8 goalModel.js
+
+        //step 5
+const {errorHandler} = require('./middleware/errorMiddleware') 
 
 const app = express()
         //dont want this here usually clean structure
@@ -22,8 +29,8 @@ const app = express()
         //step 5
 app.use(express.json())
 app.use(express.urlencoded({extended : false}))
-
-app.use('/api/goals', require('./routes/goalRoutes')) //step 2
+        //step 2  goalRoutes.js
+app.use('/api/goals', require('./routes/goalRoutes')) //step 2 
 
 app.use(errorHandler)
 

@@ -16,7 +16,7 @@ router.route('/:id').delete(deleteGoals).put(updateGoals)//line are looking for 
         // router.delete('/:id' , updateGoals)
         // router.delete('/:id' , deleteGoals)
 
-        //Step 3 Controller
+        //Step 3 Controller goalController.js
 module.exports = router
 
 
