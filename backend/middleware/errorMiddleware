@@ -6,7 +6,7 @@ const errorHandler = (err, req, res, next) => {
         stack: process.env.NODE_ENV === ' production' ? null : err.stack,
     })
 }
-
+        //deals with output error handling, not to sure what is happening
 module.exports = {
     errorHandler
 }
